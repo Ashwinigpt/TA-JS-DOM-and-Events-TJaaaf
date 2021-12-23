@@ -1,6 +1,6 @@
 
-let number = document.querySelectorAll(".box");
-number.forEach((elem, index) => {
+let boxOne = document.querySelectorAll(".box");
+boxOne.forEach((elem, index) => {
     elem.addEventListener("click", (event) => {
         event.target.innerText = index + 1;
         setTimeout(() => {
@@ -9,8 +9,8 @@ number.forEach((elem, index) => {
     });
 });
 
-let numbers = document.querySelector(".second");
-numbers.addEventListener("click", (event) => {
+let boxTwo = document.querySelector(".box");
+boxTwo.addEventListener("click", (event) => {
     let text = event.target.dataset.text;
     event.target.innerText = text;
     setTimeout(() => {
