@@ -8,7 +8,7 @@ for (let i = 0; i < 500; i++) {
   box.style.width = "4rem";
   box.style.height = "4rem";
   box.style.border = "1px solid black";
-  box.classList.add("center", "plate");
+  box.classList.add("plate");
   box.style.fontSize = "1.25rem";
 
   container.append(box);
