@@ -66,5 +66,6 @@ html {
   }
   input{
     grid-column: span 4;
+    text-align: right;
   }
   
