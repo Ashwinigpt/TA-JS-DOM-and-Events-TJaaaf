@@ -1,0 +1,71 @@
+html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    background-color: var(--bgcolor);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .padding {
+    padding: 5rem 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /*Flex*/
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  /* Heading */
+
+  .heading{
+    text-align: center;
+  }
+  .calculator{
+    display: grid;
+    grid-template-columns: repeat(4,90px);
+    height: 50vh
+  }
+  input{
+    grid-column: span 4;
+    text-align: right;
+  }
+  
