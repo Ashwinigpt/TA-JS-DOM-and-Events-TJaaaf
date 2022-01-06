@@ -1,48 +1,68 @@
 let form = document.querySelector("form");
-let model = document.querySelector(".model");
-let closeBtn = document.querySelector(".closeBtn");
-let name = document.querySelector(".name");
+let modal = document.querySelector(".modal_overlay");
+let modalInfo = document.querySelector(".modal_info");
+
 let userInfo = {};
 
-function handleSubmit(event) {
-  event.preventDefault();
-  userInfo.name = form.elements.text.value;
-  userInfo.email = form.elements.email.value;
-  userInfo.gend = form.elements.gend.value;
-  userInfo.color = form.elements.color.value;
-  userInfo.rating = form.elements.rating.value;
-  userInfo.book = form.elements.drone.value;
-  userInfo.terms = form.elements.terms.checked;
+// function handelSumbit(event){
+//         event.preventDefault();
+//         let elements = event.target.elements;
+        
+//         userInfo.name = elements.name.value;
 
-  name.innerText = `${userInfo.name}`;
-  para1 = document.createElement("p");
-  para1.innerText = `Email: ${userInfo.email}`;
-  para2 = document.createElement("p");
-  para2.innerText = `You Love: ${userInfo.gend}`;
-  para3 = document.createElement("p");
-  para3.innerText = `Color: ${userInfo.color}`;
-  para4 = document.createElement("p");
-  para4.innerText = `Rating: ${userInfo.rating}`;
-  para5 = document.createElement("p");
-  para5.innerText = `Book genre: ${userInfo.book}`;
-  small = document.createElement("small");
+//         userInfo.email = elements.email[0].value;
 
-  if (userInfo.terms === true) {
-    small.innerText = `You agreed to Terms and Conditions.`;
-  } else {
-    small.innerText = `Please agree  to Terms and Conditions!`;
-  }
-  model.append(para1, para2, para3, para4, para5, small);
-  form.style.display = "none";
-  model.style.display = "inline-block";
-  model.style.marginTop = "300px";
+//         userInfo.category = elements.gender.value;
+
+//         userInfo.color = elements.email[1].value;
+
+//         userInfo.rate = elements.range.value;
+
+//         userInfo.genre = elements.drone.value;
+
+//         console.log(elements.terms.value);
+
+//         modal.classList.add("open");
+
+//         displayForm(userInfo);
+
+// }
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let elements = event.target.elements;
+
+    userInfo.name = elements.name.value;
+    userInfo.email = elements.email.value;
+    userInfo.choice = elements.choice.value;
+    userInfo.color = elements.color.value;
+    userInfo.movie = elements.movie.value;
+    userInfo.book = elements.book.value;
+    userInfo.terms = elements.terms.value;
+
+    modal.classList.add("open");
+
+    let close = document.querySelector(".modal_close");
+    close.addEventListener("click", () => {
+        modal.classList.remove("open");
+    });
+
+    displayInfo(userInfo);
+});
+
+function displayInfo(data = {}) {
+    let h1 = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+    let email = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+    let h1 = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+    let h1 = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+    let h1 = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+    let h1 = document.createElement("h1");
+    h1.innerText = `Hello ${data.name}`;
+
+    modalInfo.append(h1);
 }
-
-form.addEventListener("submit", handleSubmit);
-
-function handleClick(event) {
-  model.style.display = "none";
-  form.style.display = "inline-block";
-}
-
-closeBtn.addEventListener("click", handleClick);
