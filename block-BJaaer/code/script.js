@@ -4,30 +4,6 @@ let modalInfo = document.querySelector(".modal_info");
 
 let userInfo = {};
 
-// function handelSumbit(event){
-//         event.preventDefault();
-//         let elements = event.target.elements;
-        
-//         userInfo.name = elements.name.value;
-
-//         userInfo.email = elements.email[0].value;
-
-//         userInfo.category = elements.gender.value;
-
-//         userInfo.color = elements.email[1].value;
-
-//         userInfo.rate = elements.range.value;
-
-//         userInfo.genre = elements.drone.value;
-
-//         console.log(elements.terms.value);
-
-//         modal.classList.add("open");
-
-//         displayForm(userInfo);
-
-// }
-
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     let elements = event.target.elements;
@@ -38,7 +14,7 @@ form.addEventListener("submit", (event) => {
     userInfo.color = elements.color.value;
     userInfo.movie = elements.movie.value;
     userInfo.book = elements.book.value;
-    userInfo.terms = elements.terms.value;
+    userInfo.terms = elements.terms.checked;
 
     modal.classList.add("open");
 
@@ -51,18 +27,21 @@ form.addEventListener("submit", (event) => {
 });
 
 function displayInfo(data = {}) {
+    modalInfo.innerHTML = "";
     let h1 = document.createElement("h1");
     h1.innerText = `Hello ${data.name}`;
-    let email = document.createElement("h1");
-    h1.innerText = `Hello ${data.name}`;
-    let h1 = document.createElement("h1");
-    h1.innerText = `Hello ${data.name}`;
-    let h1 = document.createElement("h1");
-    h1.innerText = `Hello ${data.name}`;
-    let h1 = document.createElement("h1");
-    h1.innerText = `Hello ${data.name}`;
-    let h1 = document.createElement("h1");
-    h1.innerText = `Hello ${data.name}`;
+    let email = document.createElement("p");
+    email.innerText = `Email: ${data.email}`;
+    let choice = document.createElement("p");
+    choice.innerText = `Watching Choice ${data.choice}`;
+    let color = document.createElement("p");
+    color.innerText = `Color : ${data.color}`;
+    let movie = document.createElement("p");
+    movie.innerText = `Rating : ${data.movie}`;
+    let book = document.createElement("p");
+    document.innerText = `Book: ${data.book}`;
+    let terms = document.createElement("p");
+    terms.innerText = `${data.terms ? "You agreed to Terms and Condition" : "You don't agreed to Terms and Conditions"}`;
 
-    modalInfo.append(h1);
+    modalInfo.append(h1, email, choice, color, movie, book, terms);
 }
