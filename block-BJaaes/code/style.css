@@ -35,3 +35,24 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.container{
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid grey;
+}
+
+h1{
+  background-color: rgb(179, 174, 174);
+}
+.btn{
+  width: 100%;
+  background-color: red;
+}
+label{
+  font-size: 1.3rem;
+}
+.user{
+  margin-top: 1rem;
+}
