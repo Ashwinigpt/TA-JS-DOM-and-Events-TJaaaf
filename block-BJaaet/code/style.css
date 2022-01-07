@@ -1,0 +1,11 @@
+.container{
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    border: 1px solid gray;
+    background-color: rgb(223, 152, 187);
+}
+input{
+    width: 100%;
+    margin-bottom: 5rem;
+}
